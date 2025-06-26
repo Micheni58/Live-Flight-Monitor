@@ -1,0 +1,10 @@
+{
+  "flights": [
+    {"flight_iata":"UA123","status":"en-route","dep_iata":"SFO","arr_iata":"ORD"},
+    {"flight_iata":"AA456","status":"landed","dep_iata":"LAX","arr_iata":"JFK"},
+    {"flight_iata":"DL789","status":"scheduled","dep_iata":"ATL","arr_iata":"MIA"},
+    {"flight_iata":"WN101","status":"en-route","dep_iata":"DEN","arr_iata":"PHX"},
+    {"flight_iata":"B6203","status":"landed","dep_iata":"BOS","arr_iata":"LGA"}
+  ],
+  "searches": []
+}

@@ -1,0 +1,1 @@
+const myApi = 'https://opensky-network.org/api/states/all';

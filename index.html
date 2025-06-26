@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Flight Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+    <h1>View Flights</h1>
+    </header>
+    <div id="search-bar">
+        <img src="https://t4.ftcdn.net/jpg/03/12/27/21/360_F_312272118_VN3ZJCbUnIw3X3JkNHJllyDqPWl1aQpw.jpg" alt="">
+    
+        <input type="text" name="" id="" placeholder="Enter Callsign/ID">
+        <button type="button" id="btnSearch">
+        <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+        </button>
+        
+        <button type="button" id="btnClear">
+        <i class="fa-solid fa-trash"></i>
+            Clear
+        </button>
+    </div>
+
+    <div id="content">
+    <div class="info">
+        <p>Monitor Live FLights with Just a click of a button!
+            &#128578;
+        </p>
+    </div>
+    <div class="card">
+        <h2>UAE 123</h2>
+        <ul>
+            <li>Latitude:26789</li>
+            <li>Longitude:34567</li>
+            <li>Altitude:5678</li>
+            
+        </ul>
+        <button type="button" id="removePlane">Remove</button>
+    </div>
+   </div>
+</body>
+</html>
