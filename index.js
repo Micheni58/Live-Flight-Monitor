@@ -16,19 +16,28 @@ function fetchAPi() {
   fetch('https://opensky-network.org/api/states/all')
     .then((res) => res.json())
     .then((data) => displayInfo(data))
-    .catch((error) => console.error('Fetch error:', error)); // Add error handling
+    .catch((error) => console.error('Fetch error:', error)); 
 }
 function displayInfo(planeData) {
-  const listItem = document.querySelector('.plane-data'); // Use querySelector
+  const listItem = document.querySelector('.plane-data'); 
   if (!listItem) {
     console.error('No .plane-data element found');
     return;
   }
-  listItem.innerHTML = ''; // Clear existing content
-  planeData.states.forEach(flight => { // Iterate over states
+  listItem.innerHTML = ''; 
+  planeData.states.forEach(flight => { 
     const list = document.createElement('li');
-    list.innerText = flight[1] ? flight[1].trim() : 'Unknown'; // Use callsign
-    listItem.appendChild(list); // Use list
+    list.innerText = flight[1] ? flight[1].trim() : 'Unknown'; 
+    listItem.appendChild(list); 
   });
 }
-fetchAPi(); // Call the function
+function searchData(){
+    const searchButton = document.querySelector('#btnSearch')
+    // console.log(searchButton)
+    searchButton.addEventListener('click',(e)=>{
+       const value=  e.target.value;
+        console.log(value)
+    })
+}
+
+fetchAPi();
