@@ -2,7 +2,7 @@
 
 ## 📖 Overview
 
-Live Flight Monitor is a single-page web application that fetches real-time flight data from the OpenSky Network API and displays a list of active flight callsigns. Users can search for a specific flight by its callsign to view details like origin country, longitude, latitude, and altitude. The application features a responsive, visually engaging design with a gradient background and custom border styling.
+Live Flight Monitor is a single-page web application that fetches real-time flight data from the OpenSky Network API and displays a list of active flight callsigns. Users can search for a specific flight by its callsign to view details like origin country, longitude, latitude, and altitude. The application features a responsive and  visually engaging design.
 
 ---
 
