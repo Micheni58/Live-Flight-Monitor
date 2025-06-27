@@ -23,15 +23,15 @@ function fetchAPi() {
         .then((data) => {
             planeDataCache = {
                 states: data.data.map(flight => [
-                    flight.flight?.icao || 'Unknown', // ICAO24
-                    flight.flight?.iata || 'Unknown', // Callsign
-                    flight.departure?.timezone?.split('/')[1]?.replace('_', ' ') || 'Unknown', // Origin country
+                    flight.flight?.icao || 'Unknown', 
+                    flight.flight?.iata || 'Unknown', 
+                    flight.departure?.timezone?.split('/')[1]?.replace('_', ' ') || 'Unknown', 
                     0, 0, // Placeholder
-                    flight.live?.longitude || null, // Longitude
-                    flight.live?.latitude || null, // Latitude
-                    flight.live?.altitude || null, // Altitude
-                    flight.flight_date || 'Unknown', // Flight date
-                    flight.flight_status || 'Unknown' // Flight status
+                    flight.live?.longitude || null, 
+                    flight.live?.latitude || null, 
+                    flight.live?.altitude || null, 
+                    flight.flight_date || 'Unknown', 
+                    flight.flight_status || 'Unknown' 
                 ])
             };
             displayInfo(planeDataCache);
