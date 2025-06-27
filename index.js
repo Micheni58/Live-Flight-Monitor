@@ -1,14 +1,22 @@
 let planeDataCache = null;
+let retryTimeout = null;
 
 function fetchAPi() {
     fetch('https://opensky-network.org/api/states/all')
         .then((res) => {
             if (!res.ok) {
                 if (res.status === 429) {
-                    throw new Error('Too many requests. Please wait and try again.');
+                    const listItem = document.querySelector('.plane-data');
+                    if (listItem) {
+                        listItem.innerHTML = `<li>Too many requests. Retrying in 60 seconds...</li>`;
+                    }
+                    clearTimeout(retryTimeout);
+                    retryTimeout = setTimeout(fetchAPi, 60000);
+                    throw new Error('Too many requests');
                 }
                 throw new Error(`HTTP error! Status: ${res.status}`);
             }
+            clearTimeout(retryTimeout); 
             return res.json();
         })
         .then((data) => {
@@ -33,7 +41,7 @@ function displayInfo(planeData) {
     listItem.innerHTML = '';
     planeData.states.slice(0, 50).forEach(flight => {
         const list = document.createElement('li');
-        list.innerText = flight[0] ? flight[0].trim() : 'Unknown';
+        list.innerText = flight[1] ? flight[1].trim() : 'Unknown'; 
         listItem.appendChild(list);
     });
 }
@@ -55,14 +63,14 @@ function searchData() {
             return;
         }
         const flight = planeDataCache.states.find(flight =>
-            flight[0]?.trim().toLowerCase() === callsign
+            flight[1]?.trim().toLowerCase() === callsign 
         );
         resultList.innerHTML = '';
         if (flight) {
             const li = document.createElement('li');
             li.innerHTML = `
-                Callsign: ${flight[0] || 'Unknown'}<br>
-                Origin Country: ${flight[1] || 'Unknown'}<br>
+                Callsign: ${flight[1] || 'Unknown'}<br> <!-- Fixed to flight[1] -->
+                Origin Country: ${flight[2] || 'Unknown'}<br>
                 Longitude: ${flight[5] || 'N/A'}<br>
                 Latitude: ${flight[6] || 'N/A'}<br>
                 Altitude: ${flight[7] || 'N/A'} m
@@ -80,5 +88,4 @@ function searchData() {
 }
 
 fetchAPi();
-setInterval(fetchAPi, 15000);
 searchData();
