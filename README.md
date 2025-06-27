@@ -26,7 +26,7 @@ The application features a gradient background and a decorative border image for
 ---
 
 ## 📦 Setup Instructions
-
+git clone 
 ### ✅ Prerequisites
 
 - [Node.js](https://nodejs.org/) (for running a local server)
