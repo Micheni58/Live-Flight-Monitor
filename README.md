@@ -8,7 +8,7 @@ Live Flight Monitor is a single-page web application that fetches real-time flig
 
 ## 🚀 Features
 
-- Displays up to **50 flight callsigns** in a dynamic list.
+- Displays callsigns in a dynamic list.
 - Search functionality to view flight details by callsign.
 - Clear button to reset the search input and results.
 - Error handling for API rate limits and fetch issues.
