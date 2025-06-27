@@ -27,6 +27,7 @@ Live Flight Monitor is a single-page web application that fetches real-time flig
 ## 🛠️ Setup Instructions
 
 ### Link to the repo
+Open link in browser
 https://github.com/Micheni58/Live-Flight-Monitor.git
 
 ### 1️⃣ Clone or Download the Project 
